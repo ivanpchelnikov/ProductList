@@ -5,9 +5,9 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "npm run build & npm npm run bundle",
+    "start": "npm run build & npm npm run dist/bundle.js",
     "build": "./node_modules/browserify/bin/cmd.js -o dist/bundle.js src/main.js",
-    "postinstall": "npm run bundle"
+    "postinstall": "npm run dist/bundle.js"
   },
   "dependencies": {
     "history": "^1.17.0",
