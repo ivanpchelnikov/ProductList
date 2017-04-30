@@ -4,7 +4,9 @@ import { Grid, Cell } from 'react-mdl';
 import ProductList from './components/ProductList'
 
 const main = React.createClass({
-    render: function() {
+    
+    render() {
+        console.log('qqqqqqqqqqqqqqqqqq');
         let products = this.props.Data.get("Data");
         if (products.prices) {
             return ( 

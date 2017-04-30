@@ -5,42 +5,37 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "npm run build & npm npm run dist/bundle.js",
-    "build": "./node_modules/browserify/bin/cmd.js -o dist/bundle.js src/main.js",
-    "postinstall": "npm run dist/bundle.js"
+    "start": "npm run build && NODE_ENV=production node server/server.js",
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack-dev-server --hot --inline src/main.js",
+    "lint": "eslint src/**",
+    "lint:watch": "esw -w src/**"
   },
   "dependencies": {
-    "history": "^1.17.0",
-    "immutable": "^3.7.6",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.3",
-    "react-mdl": "^1.4.1",
-    "react-redux": "^4.0.6",
-    "react-router": "^2.0.1",
-    "redux": "^3.0.5",
-    "redux-thunk": "^1.0.3"
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "history": "^4.6.1",
+    "immutable": "^3.8.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-mdl": "^1.10.1",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.4.1"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babelify": "^7.2.0",
-    "browserify": "^12.0.1",
-    "browserify-aws-sdk": "^1.0.4",
-    "local-web-server": "^1.2.1",
-    "reactify": "^1.1.1",
-    "watchify": "^3.6.1"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015",
-            "react"
-          ]
-        }
-      ]
-    ]
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "webpack-dev-server": "^2.4.5"
   }
 }

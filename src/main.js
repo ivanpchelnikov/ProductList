@@ -20,15 +20,14 @@ const store = createStoreWithMiddleware(reducer);
 
 // Define all the routes
 const routes = (
-    <Route component={AppLayout}>
-      <Route name="welcome" path="/welcome" component={WelcomePage} />
       <Route name="default" path="/" component={WelcomePage} />
-      <Route path="*" component={NotFound} />
-    </Route>
+
   )
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>{routes}</Router>
+  <Provider store = {store} >
+    <Router history = {browserHistory} > 
+        {routes} 
+    </Router>
   </Provider>,
   document.getElementById('app'));
